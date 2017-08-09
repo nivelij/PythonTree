@@ -33,7 +33,58 @@ def is_bst_2(node):
 
     return True
 
-def main():
+def construct_bst(node, value):
+
+    if not node.value:
+        node.value = value
+    else:
+        if node.value > value:
+            if not node.left:
+                node.left = Node(value)
+            else:
+                construct_bst(node.left, value)
+        else:
+            if not node.right:
+                node.right = Node(value)
+            else:
+                construct_bst(node.right, value)
+
+def print_bst(node, identifier):
+
+    if node:
+        print '# %s :%s' % (identifier, node.value)
+
+        print_bst(node.left, 'left of %s' % node.value)
+        print_bst(node.right, 'right of %s' % node.value)
+                
+def main_2():
+    node = Node(None)
+    
+    """
+              10
+           /     \
+          4       11
+         / \       \
+        1   5      20
+             \     /
+              7   12
+               \    \
+                9   13
+    """
+    construct_bst(node, 10)
+    construct_bst(node, 4)
+    construct_bst(node, 5)
+    construct_bst(node, 11)
+    construct_bst(node, 20)
+    construct_bst(node, 12)
+    construct_bst(node, 7)
+    construct_bst(node, 1)
+    construct_bst(node, 9)
+    construct_bst(node, 13)
+    
+    print_bst(node, 'root')
+    
+def main_1():
     """
               10
           /        \
@@ -70,4 +121,4 @@ def main():
         print '# From Boolean Method: Not BST'
 
 if __name__ == '__main__':
-    main()
+    main_2()
