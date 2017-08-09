@@ -68,8 +68,8 @@ def main_2():
         1   5      20
              \     /
               7   12
-               \    \
-                9   13
+             / \    \
+            6   9   13
     """
     construct_bst(node, 10)
     construct_bst(node, 4)
@@ -81,6 +81,8 @@ def main_2():
     construct_bst(node, 1)
     construct_bst(node, 9)
     construct_bst(node, 13)
+    construct_bst(node, 6)
+    construct_bst(node, 21)
     
     print_bst(node, 'root')
     
