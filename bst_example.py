@@ -56,9 +56,15 @@ def print_bst(node, identifier):
 
         print_bst(node.left, 'left of %s' % node.value)
         print_bst(node.right, 'right of %s' % node.value)
-                
-def print_nodes_top_view(node):
-    pass
+
+def print_nodes_bottom_view(node):
+    if node.left:
+        print_nodes_bottom_view(node.left)
+    if node.right:
+        print_nodes_bottom_view(node.right)
+
+    if not node.left and not node.right:
+        print node.value
 
 def main_3():
     """
@@ -83,20 +89,20 @@ def main_3():
     n3r1.right = n6r3
     n3r1.left = n6l3
 
-    print_nodes_top_view(n1)
+    print_nodes_bottom_view(n1)
 
 
 def main_2():
     node = Node(None)
-    
+
     """
               10
            /     \
           4       11
          / \       \
-        1   5      20
-         \   \     /
-          2   7   12
+        1   5       20
+         \   \     /  \
+          2   7   12  21
              / \    \
             6   9   13
     """
@@ -153,4 +159,4 @@ def main_1():
         print '# From Boolean Method: Not BST'
 
 if __name__ == '__main__':
-    main_3()
+    main_2()
