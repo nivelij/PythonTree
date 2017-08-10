@@ -24,9 +24,9 @@ def main():
     """
                     Avengers (9)
                     /          \
-        Capt. America (6)        Ironman (7)
-                                /            \
-                          Ironman-2 (8)     Ironman-3 (3)
+        Capt. America (6)     Ironman (7)
+                             /            \
+                       Ironman-2 (8)     Ironman-3 (3)
     """
     m = Movie('Avengers', 9)
     m2 = Movie('Captain America', 6)
